@@ -1,0 +1,25 @@
+div.hint {
+  margin-top: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  p.hint-text {
+    color: #0006;
+  }
+  pre.hint-icon {
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 3px solid #ddd;
+    color: #ddd;
+    font-size: 1.4rem;
+    font-weight: light;
+    border-radius: 50%;
+
+    transform: scale(0.8);
+  }
+}

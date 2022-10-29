@@ -15,6 +15,15 @@ interface IState {
   };
 }
 
+export interface IResponse {
+  config?: any;
+  data?: any;
+  headers?: any;
+  request?: any;
+  status?: number;
+  statusText?: string;
+}
+
 export type Action = CategoryAction | CatAction;
 
 export default IState;

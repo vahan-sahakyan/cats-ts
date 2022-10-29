@@ -95,7 +95,7 @@ export type FetchMoreCatsFailureAction = {
   payload: Error | string;
 };
 
-// Toggle is Zoomed
+// Toggle isZoomed
 export type ToggleIsZoomedAction = {
   type: string;
   payload: string;

@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import React, { useLayoutEffect, useState } from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';

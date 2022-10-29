@@ -8,8 +8,9 @@ import {
 } from '../../redux/cat/cat.actions';
 import { selectAllCats } from '../../redux/cat/cat.selector';
 import { selectAllCategories } from '../../redux/category/category.selector';
-import CatType from '../../types/cat.type';
+
 import CategoryType from '../../types/category.type';
+import Hint from '../hint/hint.component';
 import { CatStyled } from './cats.styles';
 
 import './cats.styles.scss';
@@ -21,9 +22,6 @@ const Cats: React.FC = (): JSX.Element => {
 
   const catsAll = useSelector(selectAllCats);
   const categoriesAll = useSelector(selectAllCategories);
-
-  // console.log({ categoriesAll });
-  // console.log({ catsAll });
 
   const [page, setPage] = useState(1);
 
@@ -43,13 +41,10 @@ const Cats: React.FC = (): JSX.Element => {
   useEffect(() => {
     const listenHandler = (location: Location) => {
       const { pathname } = location;
-      // console.warn({ pathname });
       const categoryFromUrl = pathname.split('/')[2];
       const selectedCategory: CategoryType = categoriesAll?.find(
         ({ id, name }: CategoryType) => +id === +categoryFromUrl
       );
-      // console.warn({ selectedCategory });
-      // console.warn({ categoryFromUrl });
       dispatch(fetchCatsStart(page, selectedCategory?.id));
       setCurrentCategory(selectedCategory as CategoryType);
     };
@@ -64,18 +59,21 @@ const Cats: React.FC = (): JSX.Element => {
       {!catsAll.length ? (
         <h1 className='no-cats'>No cats</h1>
       ) : (
-        <div className='cats'>
-          {catsAll.map(({ url, id, isZoomed }: any) => (
-            <CatStyled
-              onClick={() => dispatch(toggleIsZoomed(id))}
-              className='cat'
-              isZoomed={isZoomed}
-              src={url}
-              key={id}
-              alt='cat-img'
-            />
-          ))}
-        </div>
+        <>
+          <Hint />
+          <div className='cats'>
+            {catsAll.map(({ url, id, isZoomed }: any) => (
+              <CatStyled
+                onClick={() => dispatch(toggleIsZoomed(id))}
+                className='cat'
+                isZoomed={isZoomed}
+                src={url}
+                key={id}
+                alt='cat-img'
+              />
+            ))}
+          </div>
+        </>
       )}
       <button
         onClick={() => {

@@ -1,5 +1,4 @@
 import { nanoid } from 'nanoid';
-import Cats from '../../components/cats/cats.component';
 import CatType from '../../types/cat.type';
 import { CatAction } from './cat.actions';
 
