@@ -71,7 +71,7 @@ export function* onFetchMoreCatsStart() {
 }
 
 ///////////////////////
-// All User Sagas
+// All Cat Sagas
 ///////////////////////
 
 export function* catSagas() {

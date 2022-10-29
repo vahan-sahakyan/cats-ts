@@ -35,7 +35,7 @@ export function* onFetchCategoriesStart() {
 }
 
 ///////////////////////
-// All User Sagas
+// All Category Sagas
 ///////////////////////
 
 export function* categorySagas() {
