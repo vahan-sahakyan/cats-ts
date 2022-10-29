@@ -1,0 +1,21 @@
+.cats {
+  max-width: 80vw;
+  display: grid;
+  grid-template-columns: repeat(2, 30vw);
+  gap: 1rem;
+  margin: 3rem;
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+
+  img.cat {
+    //
+  }
+}
+h1.no-cats {
+  padding: 2em;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 8px;
+  color: #5552;
+}

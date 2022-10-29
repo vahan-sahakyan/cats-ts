@@ -1,0 +1,42 @@
+svg.sb-mobile-toggle {
+  display: none !important;
+}
+.layout {
+  color: #444;
+  display: grid;
+  grid-template-columns: 25vw 75vw;
+  grid-template-rows: 1fr;
+
+  min-height: 100vh;
+  max-height: 100vh;
+
+  .sidebar {
+    background-color: #212124;
+  }
+  .main-container {
+    grid-column: 2/-1;
+    grid-row: 1/-1;
+    background-color: #fff;
+  }
+}
+@media (max-width: 720px) {
+  .layout {
+    color: #444;
+    display: block;
+
+    min-height: 100vh;
+
+    .sidebar {
+      // height: 0px;
+      text-align: center;
+      position: fixed;
+      bottom: 0;
+      width: 100vw;
+      background-color: #212124;
+    }
+
+    .main-container {
+      background-color: #fff;
+    }
+  }
+}
